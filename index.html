@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Student Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Smart Student Management System</h1>
+    <p>Data Structures Based Student Management Project</p>
+
+    <hr>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section">
+
+        <h2>Dashboard</h2>
+
+        <p>Total Students: <span id="studentCount">0</span></p>
+        <p>Total Courses: <span id="courseCount">0</span></p>
+        <p>Students in Queue: <span id="queueCount">0</span></p>
+        <p>Recent Action: <span id="recentAction">None</span></p>
+
+    </section>
+
+    <!-- Navigation -->
+    <nav>
+
+        <button onclick="showSection('dashboard')">
+            Dashboard
+        </button>
+
+        <button onclick="showSection('students')">
+            Students
+        </button>
+
+        <button onclick="showSection('courses')">
+            Courses
+        </button>
+
+        <button onclick="showSection('helpdesk')">
+            Help Desk
+        </button>
+
+        <button onclick="showSection('history')">
+            Action History
+        </button>
+    <button onclick="showSection('tree')">Tree</button>
+    <button onclick="showSection('graph')">Graph</button>
+    </nav>
+
+    <hr>
+
+    <!-- Student Management -->
+    <section id="students" class="section">
+
+        <h2>Student Management</h2>
+
+        <input type="number" id="studentId"
+               placeholder="Student ID">
+
+        <input type="text" id="studentName"
+               placeholder="Student Name">
+
+        <input type="text" id="branch"
+               placeholder="Branch">
+
+        <input type="number" id="semester"
+               placeholder="Semester">
+
+        <input type="number" id="cgpa"
+               step="0.1"
+               placeholder="CGPA">
+
+        <br><br>
+
+        <button onclick="addStudent()">
+            Add Student
+        </button>
+
+        <br><br>
+
+        <input type="number"
+               id="searchId"
+               placeholder="Search Student ID">
+
+        <button onclick="searchStudent()">
+            Search Student
+        </button>
+
+        <br><br>
+
+        <input type="number"
+               id="updateId"
+               placeholder="Student ID">
+
+        <button onclick="updateStudent()">
+            Update Student
+        </button>
+
+        <button onclick="deleteStudent()">
+            Delete Student
+        </button>
+
+        <button onclick="sortStudents()">
+            Sort by CGPA
+        </button>
+
+        <h3>Student Records</h3>
+
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Semester</th>
+                    <th>CGPA</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTable">
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+    <!-- Course Management -->
+    <section id="courses" class="section">
+
+        <h2>Course Management</h2>
+
+        <input type="number"
+               id="courseStudentId"
+               placeholder="Student ID">
+
+        <input type="text"
+               id="courseName"
+               placeholder="Course Name">
+
+        <br><br>
+
+        <button onclick="addCourse()">
+            Add Course
+        </button>
+
+        <h3>Course List</h3>
+
+        <div id="courseList"></div>
+
+    </section>
+
+    <hr>
+
+    <!-- Help Desk -->
+    <section id="helpdesk" class="section">
+
+        <h2>Help Desk Queue</h2>
+
+        <input type="number"
+               id="queueStudentId"
+               placeholder="Student ID">
+
+        <br><br>
+
+        <button onclick="addToQueue()">
+            Add to Queue
+        </button>
+
+        <button onclick="serveStudent()">
+            Serve Student
+        </button>
+
+        <h3>Queue</h3>
+
+        <ul id="queueList"></ul>
+
+    </section>
+    <!-- Tree Data Structure -->
+<section id="tree" class="section">
+    <h2>Tree Data Structure</h2>
+
+    <input type="number" id="treeValue" placeholder="Enter value">
+
+    <button onclick="insertTree()">Insert Node</button>
+    <button onclick="searchTree()">Search Node</button>
+    <button onclick="displayTree()">Display Tree</button>
+
+    <h3>Tree Output</h3>
+    <div id="treeOutput"></div>
+</section>
+<!-- Graph Data Structure -->
+<section id="graph" class="section">
+    <h2>Graph Data Structure</h2>
+
+    <input type="text" id="graphNode1" placeholder="Node 1">
+    <input type="text" id="graphNode2" placeholder="Node 2">
+
+    <br><br>
+
+    <button onclick="addEdge()">Add Edge</button>
+    <button onclick="displayGraph()">Display Graph</button>
+    <button onclick="clearGraph()">Clear Graph</button>
+
+    <h3>Graph Output</h3>
+    <div id="graphOutput"></div>
+</section>
+
+    <hr>
+
+    <!-- Action History -->
+    <section id="history" class="section">
+
+        <h2>Action History</h2>
+
+        <button onclick="removeLastAction()">
+            Remove Last Action
+        </button>
+
+        <h3>History</h3>
+
+        <ul id="historyList"></ul>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
